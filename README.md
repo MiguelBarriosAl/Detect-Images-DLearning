@@ -5,10 +5,11 @@ For this project I pretend to simulate a production deployment of a Tensorflow m
 # Table of Contents
 
 - [Model in DEV](#model-in-dev)
+- [Model in PROD](#model-in-prod)
 
-# Model In DEV
+## Model In DEV
 
-Docker Container *.pd
+### Docker Container *.pd
 
 `1. docker pull tensorflow/serving`
 
@@ -46,8 +47,8 @@ Arguments:
 
     `python3 test-http.py --image images/img01.jpg --model flowers --version 1 --port 9501`
 
-# Model In PRODUCTION
-Docker compose
+## Model In PROD
+### Docker compose
 
     docker-compose -f compose-config.yml up &
 
