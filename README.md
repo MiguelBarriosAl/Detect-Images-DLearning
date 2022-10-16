@@ -10,11 +10,15 @@ For this project I pretend to simulate a production deployment of a Tensorflow m
 
 Docker Container *.pd
 
-`1. env var => export MODEL_PB=$(pwd)/model/tf2x/tensorflow/`
+`1. docker pull tensorflow/serving`
 
-`2. docker run -p 9500:8500 -p 9501:8501 -v "$MODEL_PB:/models/flowers/" -e MODEL_NAME=flowers -t tensorflow/serving &`
+`2. env var => export MODEL_PB=$(pwd)/model/tf2x/tensorflow/`
 
-`3. curl http://localhost:9501/v1/models/flowers`
+`3. docker run -p 9500:8500 -p 9501:8501 -v "$MODEL_PB:/models/flowers/" -e MODEL_NAME=flowers -t tensorflow/serving &`
+
+`4.Into of localhost server`
+
+  `curl http://localhost:9501/v1/models/flowers`
     
     {
      "model_version_status": [
@@ -41,3 +45,25 @@ Arguments:
 - "-p", "--port": Model PORT number is required.
 
     `python3 test-http.py --image images/img01.jpg --model flowers --version 1 --port 9501`
+
+# Model In PRODUCTION
+Docker compose
+
+    docker-compose -f compose-config.yml up &
+
+  `curl http://localhost:9501/v1/models/flowers`
+    
+    {
+     "model_version_status": [
+      {
+       "version": "1",
+       "state": "AVAILABLE",
+       "status": {
+        "error_code": "OK",
+        "error_message": ""
+       }
+      }
+     ]
+    }
+
+    docker-compose -f compose-config.yml down 
