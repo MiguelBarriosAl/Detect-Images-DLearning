@@ -4,7 +4,7 @@ For this project I pretend to simulate a production deployment of a Tensorflow m
 
 # Table of Contents
 
--[Model in DEV](#model-in-dev)
+- [Model in DEV](#model-in-dev)
 
 # Model In DEV
 
