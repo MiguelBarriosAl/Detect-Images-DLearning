@@ -8,7 +8,7 @@ For this project I pretend to simulate a production deployment of a Tensorflow m
 
 # Model In DEV
 
-**Docker Container *.pd**
+Docker Container *.pd
 
 `1. env var => export MODEL_PB=$(pwd)/model/tf2x/tensorflow/`
 
@@ -16,18 +16,18 @@ For this project I pretend to simulate a production deployment of a Tensorflow m
 
 `3. curl http://localhost:9501/v1/models/flowers`
     
-                {
-                 "model_version_status": [
-                  {
-                   "version": "1",
-                   "state": "AVAILABLE",
-                   "status": {
-                    "error_code": "OK",
-                    "error_message": ""
-                   }
-                  }
-                 ]
-                }
+    {
+     "model_version_status": [
+      {
+       "version": "1",
+       "state": "AVAILABLE",
+       "status": {
+        "error_code": "OK",
+        "error_message": ""
+       }
+      }
+     ]
+    }
 
 
 Test Http Model Images 
@@ -40,5 +40,4 @@ Arguments:
 - "-v", "--version": Model VERSION is required.
 - "-p", "--port": Model PORT number is required.
 
-
-    python3 test-http.py --image images/img01.jpg --model flowers --version 1 --port 9501
+    `python3 test-http.py --image images/img01.jpg --model flowers --version 1 --port 9501`
