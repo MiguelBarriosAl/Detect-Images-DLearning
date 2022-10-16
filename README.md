@@ -1,5 +1,5 @@
 
-<h1 align="center"> Deploy ML models with FastAPI, Docker, and Heroku </h1>
+<h1 align="center"> Deploy Tensorflow model with FastAPI and Docker</h1>
 For this project I pretend to simulate a production deployment of a Tensorflow model taking into account the client component that will request predictions from the model, the front-end component that will develop the services with FastAPi, and the model in docker compose.
 
 # Table of Contents
@@ -30,7 +30,7 @@ For this project I pretend to simulate a production deployment of a Tensorflow m
                 }
 
 
-**Test Http Model Images** 
+Test Http Model Images 
 
 Command: python3
 Script: test/test-http.py
