@@ -17,7 +17,7 @@ For this project I pretend to simulate a production deployment of a Tensorflow m
 
 `3. docker run -p 9500:8500 -p 9501:8501 -v "$MODEL_PB:/models/flowers/" -e MODEL_NAME=flowers -t tensorflow/serving &`
 
-`4.Into of localhost server`
+`4. Into of localhost server`
 
   `curl http://localhost:9501/v1/models/flowers`
     
@@ -67,4 +67,24 @@ Arguments:
      ]
     }
 
-    docker-compose -f compose-config.yml down 
+    docker-compose -f compose-config.yml down
+
+### Docker Swarm
+    cd docker/
+
+    docker/
+    ├── compose-config-swarm.yml
+    └── compose-config.yml
+    
+    ### START
+    docker stack deploy -c compose-config-swarm.yml MYSTACK
+
+    #### Visualizer
+    curl http://localhost:9001/
+
+    ### STOP
+    docker service ls
+    docker service rm <ID>
+    
+    curl http://localhost:9001/
+
